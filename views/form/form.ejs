@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sports Training Camp Registration</title>
+    <link rel="stylesheet" href="/css/form.css" />  
+
+  <script type="text/javascript">
+    function validateForm() {
+     
+      var pass = document.basic.psw.value;
+      var pass1 = document.basic.psw-repeat.value;
+      if (pass == pass1) { return true; }
+        else{ 
+        alert("Passwords do not match!");
+        return false;      
+      }
+    } 
+  </script>
+  </head>
+
+  <body>
+
+    <!--NavBar--->
+ <div class="header" id="myheader">
+  <a href="login">Log In</a>
+  <a href="form" class="active">Register</a>
+</div>
+<br><br>
+<h1 style="text-align:center">Sports Training Camp Registration</h1>
+  <div class="row">
+     <div class="column3" style="width: 50%" >
+
+      <div class="mySlides fade">
+        <img src="/images/01.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/images/02.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/images/03.jpg" style="width:100%">
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+      </div>
+
+    </div>
+
+    <div class="column1"  style="width: 40%; margin-top: 10px ">
+
+      <div class="main-block">
+
+        <form name="basic" action="/submit" onsubmit="return validateForm()" method="post">
+
+          	<div class="item">   
+              <div class="question">
+                 <p><b>Name</b></p>  
+                <input type="text" name="name" placeholder="Your name.." required>
+              </div>
+          	</div>
+
+          <div class="item">   
+              <div class="question">
+                 <p><b>Age</b></p>  
+                <input type="text" name="age" placeholder="Your age.." required>
+              </div>
+            </div>
+
+          <div class="item"> 
+            <p><b>Choose a Sport</b></p> 
+            <select name="sport">
+              <option value="Badminton">Badminton</option>
+              <option value="Cricket">Cricket</option>
+              <option value="Football">Football</option>
+              <option value="Hockey">Hockey</option>
+            </select>
+          </div>
+
+          <div class="item">
+            <p><b>Password</b></p> 
+            <input type="password" id="psw" placeholder="Create a Password (Minimum 6 characters)" name="psw" required>
+            <input type="password" id="psw1" placeholder="Repeat Password" name="psw-repeat" required>
+
+          </div>
+          		
+          <div class="btn-block">
+            <button type="button" onclick="window.location.href = '/login';">CANCEL</button> &nbsp; &nbsp; &nbsp; 
+            <button type="submit" value="submit">REGISTER</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+  <script src="phoneno-all-numeric-validation.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sports Training Camp Registration</title>
+    <link rel="stylesheet" href="/css/form.css" />  
+  </head>
+
+
+  <body>
+
+
+<!--<hr width="250px">-->
+
+<div class="sidenav">
+	<br><br>
+  <a href="accounts" >Account Overview</a>
+  <a href="edit"style="color:    #32CD32">Edit Account</a>
+  <a href="cancel">Cancel Registration</a>
+  <a href="form">Logout</a>
+</div>
+
+<br><br>
+<h1 style="text-align:left; margin-left: 270px;">Account</h1>
+<% results.forEach(function(result){%>
+<div class="main" style=" margin-right: 150px; ">
+	<form name="basic" action="/edit" onsubmit="return validateForm()" method="post">
+
+          	<div class="item">   
+              <div class="question">
+                 <p><b>Name</b></p>  
+                <input type="text" name="name" placeholder= "<%=result.studentname %>" required>
+              </div>
+          	</div>
+
+          <div class="item">   
+              <div class="question">
+                 <p><b>Age</b></p>  
+                <input type="text" name="age" placeholder="<%=result.age%>" required>
+              </div>
+            </div>
+
+          <div class="item"> 
+            <p><b>Choose a Sport</b></p> 
+            <select id="sport" name="Sport">
+              <option value="Badminton">Badminton</option>
+              <option value="Cricket">Cricket</option>
+              <option value="Football">Football</option>
+              <option value="Hockey">Hockey</option>
+            </select>
+          </div>
+
+          		
+          <div class="btn-block">
+            <button type="button" onclick="window.location.href = '/accounts';">CANCEL</button> &nbsp; &nbsp; &nbsp; 
+            <button type="submit" value="submit" onclick="toast()">EDIT</button>
+          </div>
+
+        </form>
+</div>
+<% }); %>
+
+  <script src="phoneno-all-numeric-validation.js"></script>
+
+  </body>
+</html>

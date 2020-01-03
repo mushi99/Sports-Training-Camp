@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sports Training Camp Registration</title>
+    <link rel="stylesheet" href="/css/form.css" />  
+  </head>
+
+
+  <script type="text/javascript">
+    function validateForm() {
+      var x = document.forms["basic"]["phone"].value;
+      var phoneno = /^\d{10}$/;
+      if (x.match(phoneno)) {}
+        else{
+          alert("Invalid Phone no.!")
+        return false;
+      }
+    }
+  </script>
+
+
+  <body>
+
+    <!--NavBar--->
+ <div class="header" id="myheader">
+  <a href="login" class="active">Log In</a> 
+  <a href="form">Register</a>
+  
+</div>
+<br><br>
+  <div class="row">
+    
+    <div class="column3" style="width: 50%" >
+
+      <div class="mySlides fade">
+        <img src="/images/01.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/images/02.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/images/03.jpg" style="width:100%">
+      </div>
+
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+      </div>
+
+    </div>
+
+
+    <div class="column1" style="width: 40%; margin-top: 100px ">
+
+      <h1 style=" ">Sports Training Camp </h1>
+      <form name="basic" action="/login" onsubmit="return validateForm()" method="post">
+          
+          <div class="item">   
+            <div class="question">
+               <p><b>Name</b></p>  
+              <input type="text" name="name" placeholder="Your name.." required>
+            </div>
+          </div>
+
+        <div class="item">
+          <p><b>Password</b></p> 
+          <input type="password" placeholder="Create a Password (Minimum 6 characters)" name="psw" required>
+        </div>
+            
+        <div class="btn-block">
+          <button type="submit" value="submit" onclick="toast()">LOGIN</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+
+  <script src="phoneno-all-numeric-validation.js"></script>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+  </body>
+</html>
+<!--
+  

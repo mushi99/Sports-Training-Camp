@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sports Training Camp Registration</title>
+    <link rel="stylesheet" href="/css/form.css" />  
+  </head>
+
+
+  <body>
+
+<div class="sidenav">
+	<br><br>
+  <a href="accounts" style="color:#32CD32">Account Overview</a>
+  <a href="edit">Edit Account</a>
+  <a href="delete">Cancel Registration</a>
+  <a href="login">Logout</a>
+</div>
+
+<br><br>
+<h1 style="text-align:left; margin-left: 270px;">Account</h1>
+<% results.forEach(function(result){%>
+<div class="main">
+	<div class="row">
+	    <div class="column2">
+	    	<p style="font-size: 37px">Name</p>
+	    </div>
+	    <div class="column2">
+	    	<p style="font-size: 37px"><%=result.studentname %></p>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="column2">
+	    	<p style="font-size: 37px">Age</p>
+	    </div>
+	    <div class="column2">
+	    	<p style="font-size: 37px"><%=result.age %></p>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="column2">
+	    	<p style="font-size: 37px">Sport</p>
+	    </div>
+	    <div class="column2">
+	    	<p style="font-size: 37px"><%=result.sport %></p>
+	    </div>
+	</div>
+</div>
+
+<% }); %>
+  <script src="phoneno-all-numeric-validation.js"></script>
+
+  </body>
+</html>

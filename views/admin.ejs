@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Sports Training Camp Registration</title>
+	<link rel="stylesheet" href="/css/home.css" />  
+	</head>
+
+
+	<body>
+
+		<div class="navbar">
+			<a href="form">Home</a>
+			<a href="admin">Show All</a>
+			<div class="dropdown">
+				<button class="dropbtn">Select Category 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+
+				<div class="dropdown-content">
+				  <a href="badminton">Badminton</a>
+				  <a href="cricket">Cricket</a>
+				  <a href="football">Football</a>
+				  <a href="hockey">Hockey</a>
+				</div>
+			</div> 
+		</div>
+
+		<div style="text-align:center">
+		  <h1 style="color:#ffffff;font-size:60px">Registered Students</h1>
+		</div>
+
+<% results.forEach(function(result){%>
+
+		<div class="container">
+			<p><span> Name - <%=result.studentname %> &nbsp; Age - <%=result.age %> &nbsp;Sport - <%=result.sport %></span></p>
+		</div>
+		
+
+<% }); %>
+
+	</body>
+
+</html>
